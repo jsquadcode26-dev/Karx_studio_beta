@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[92vh] items-center justify-center overflow-hidden bg-footer"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-footer"
       aria-labelledby="hero-heading"
     >
       <motion.div
