@@ -10,7 +10,7 @@ export const SITE = {
   tagline: 'Capturing Timeless Moments',
   description:
     'Premium wedding photography, cinematography and creative visual storytelling in Thanjavur and across Tamil Nadu.',
-  url: 'https://karxstudio.com',
+  url: 'https://karx-photography.vercel.app',
   locale: 'en_IN',
   builtBy: 'JAYASURIYA@JSQuad',
   /** Search Console ownership token, carried over from the original site. */
