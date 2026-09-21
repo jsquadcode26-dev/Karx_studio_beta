@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { mobileMenuSlide, modalBackdrop } from '@/lib/animations';
@@ -66,21 +67,18 @@ export default function PortfolioNavbar({ transparent = false }: NavigationProps
       >
         <nav aria-label="Main" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
-            <Link href="/" className="group flex items-center gap-2" aria-label={`${SITE.name} home`}>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-hover transition-transform duration-200 group-hover:scale-105">
-                <svg viewBox="0 0 24 24" className="h-5 w-5 text-white" fill="none" stroke="currentColor" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8" strokeWidth="2" />
-                  <circle cx="12" cy="12" r="3" strokeWidth="2" />
-                </svg>
-              </span>
-              <span className="text-lg font-black sm:text-xl md:text-2xl">
-                <span className={isSolid ? 'text-ink' : 'text-white'}>{SITE.shortName}</span>
-                {/* Solid rather than the gradient: at 18px this is normal-size
-                    text, so it needs the full 4.5:1 across the whole wordmark. */}
-                <span className={cn('ml-1', isSolid ? 'text-accent' : 'text-accent-hover')}>
-                  PHOTOGRAPHY
-                </span>
-              </span>
+            {/* The wordmark already reads "KARX Photography", so the image alt
+                carries the name and the link needs no separate label. */}
+            <Link href="/" className="group flex items-center">
+              <Image
+                src="/assets/logo.png"
+                alt={SITE.name}
+                width={664}
+                height={296}
+                priority
+                sizes="(max-width: 768px) 72px, 90px"
+                className="h-8 w-auto transition-transform duration-200 group-hover:scale-105 md:h-10"
+              />
             </Link>
 
             {/* Desktop links */}
