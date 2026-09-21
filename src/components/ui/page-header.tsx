@@ -26,7 +26,7 @@ export default function PageHeader({ title, subtitle, image, imageAlt = '' }: Pa
     target: sectionRef,
     offset: ['start start', 'end start'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
 
   const hasImage = Boolean(image);
 
@@ -37,7 +37,7 @@ export default function PageHeader({ title, subtitle, image, imageAlt = '' }: Pa
     >
       {hasImage && (
         <motion.div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-x-0 -top-[30%] h-[160%] -z-10"
           style={prefersReducedMotion ? undefined : { y }}
           aria-hidden={imageAlt === '' ? 'true' : undefined}
         >
@@ -47,7 +47,7 @@ export default function PageHeader({ title, subtitle, image, imageAlt = '' }: Pa
             fill
             priority
             sizes="100vw"
-            className="scale-110 object-cover"
+            className="object-cover"
             wrapperClassName="absolute inset-0"
           />
           <span className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />

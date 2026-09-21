@@ -27,7 +27,7 @@ export default function Hero() {
     target: sectionRef,
     offset: ['start start', 'end start'],
   });
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -37,7 +37,7 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-x-0 -top-[30%] h-[160%]"
         style={prefersReducedMotion ? undefined : { y: backgroundY }}
         aria-hidden="true"
       >
